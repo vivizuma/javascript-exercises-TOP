@@ -12,30 +12,44 @@ const sum = function (x) {
   return x;
 };
 
-const multiply = function (...args) {
-  const arr = args;
-  console.log("this is args" + args);
-  console.log(arr.length);
-  arrLength = arr.length;
-  console.log(arrLength);
-  testVar = 0;
-  for (i = 0; i <= arrLength; i++) {
-    testVar++;
+const multiply = function (a) {
+  const newArray = [];
+  let answer = 0;
+  for (i = 0; i < a.length; i++) {
+    newArray.push(a[i]);
+    console.log(newArray);
   }
-  console.log(testVar);
+  answer = newArray.reduce((acc, curr) => acc * curr, 1);
+  return answer;
 };
 
+// const Array = arguments.reduce((acc, curr) => acc * curr, 1);
+// console.log(Array);
+// return Array;
 const power = function (a, b) {
   exp = a ** b;
   return exp;
 };
 
 const factorial = function (a) {
- arr = [];
-  
+  const Array = [];
+  for (i = a; i > 0; i--) {
+    Array.push(a);
+    a--;
+  }
+  const newArray = Array.reduce((acc, curr) => acc * curr, 1);
+  return newArray;
 };
-factorial(5);
-multiply([5, 5, 6, 6, 6, 6]);
+
+function spreed(a) {
+  console.log(a);
+  let array = a;
+  array = array.reduce((acc, curr) => acc * curr, 1);
+  console.log(array);
+}
+spreed([2, 4, 6, 8, 10, 12, 14], [2, 5]);
+spreed([2, 5]);
+
 // Do not edit below this line
 module.exports = {
   add,
