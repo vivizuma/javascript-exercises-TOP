@@ -1,53 +1,30 @@
-// const palindromes = function (word) {
-//   let wordString = "";
-//   let wordRev = "";
-//   wordString = word;
-//   let reverseString = wordString.split("").reverse().join(wordRev);
-//   console.log(wordRev);
-//   console.log("word " + wordString);
-//   console.log("rev string " + reverseString);
+function palindromes(word) {
+  let arr = [];
+  let revArr = [];
 
-//   if (wordString === reverseString) {
-//     return true;
-//   } else {
-//     return false;
-//   }
-// };
+  let string;
+  let revString;
+  //make word in to an array-like object. create a copy and reverse it
+  arr = [...word];
+  revArr = [...arr].reverse();
+  //join array in to string, remove punctuation and spaces
+  string = arr
+    .join("")
+    .toLowerCase()
+    .replace(/[^\w\s]|_/g, "")
+    .replace(/\s+/g, "");
 
-// function palidromes(a) {
-//   let wordArray = [...a];
-//   const length = wordArray.length;
-//   console.log("pally length " + length);
-//   const modulus = length % 2;
-//   console.log("pally modulus remainder " + modulus);
-//   const evenHalf = (length - modulus) / 2;
-//   console.log(evenHalf);
+  revString = revArr
+    .join("")
+    .toLowerCase()
+    .replace(/[^\w\s]|_/g, "")
+    .replace(/\s+/g, "");
+  //compare the two strings for equality
+  if (string === revString) {
+    return true;
+  } else return false;
+}
 
-//   for (i=length; i>0; i--) {
-//     if()
-//   }
-// }
-
-// function pal(word) {
-//   let arr = [...word]
-//   console.log(arr);
-//   revArr = arr.reverse();
-
-//   revString = arr.join("");
-//   console.log(revString);
-
-//   arrString = arr.join("");
-//   console.log(arrString)
-
-//   if (arrString === revString) {
-//     return true
-//   } else return false
-// }
-// pal("racecar")
-// pal("tacos")
-
-function palindromes(word) {}
-console.log(palindromes("tacoss"));
 palindromes("tacos");
 // console.log(palindromes("racecar"));
 // console.log(palindromes("tacos"));
